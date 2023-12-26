@@ -20,7 +20,7 @@ fclose(file);
     return sum;
 }
 
-void main() {
+int main() {
     FILE *file;
     Person person = {1, "Faiz saify"};
 
@@ -43,7 +43,7 @@ void main() {
         perror("error opening file");
         return 1;
     }
-    fprintf(file, "checksum: %lu\n", filechecksum);
+    fprintf(file, "checksum: %lu\n", fileChecksum);
 
     for (int i = 2; i <= 50; ++i) {
         fprintf(file, "multiplication table of %d:\n", i);
@@ -52,7 +52,7 @@ void main() {
         }
         fprintf(file, "\n");
     }
-
+    
     fclose(file);
     
 }
